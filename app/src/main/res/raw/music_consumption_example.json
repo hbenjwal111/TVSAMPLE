@@ -1,0 +1,20 @@
+{
+  "songs": [
+    {
+      "number": 1,
+      "duration": "1:38",
+      "title": "Thump and Jump",
+      "description": "Jimmy Fontanez/Media Right Production",
+      "image": "card_image_music_01",
+      "file": ""
+    },
+    {
+      "number": 2,
+      "duration": "1:42",
+      "title": "Give",
+      "description": "Silent Partner",
+      "image": "card_image_music_02",
+      "file": ""
+    }
+  ]
+}
