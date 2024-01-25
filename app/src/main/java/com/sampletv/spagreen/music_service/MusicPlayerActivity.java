@@ -1,9 +1,10 @@
-package com.oxootv.spagreen.music_service;
+package com.sampletv.spagreen.music_service;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.oxootv.spagreen.R;
+import com.sampletv.spagreen.R;
+
 
 public class MusicPlayerActivity extends Activity {
 

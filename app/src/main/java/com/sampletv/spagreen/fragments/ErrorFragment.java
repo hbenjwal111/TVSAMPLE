@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.fragments;
+package com.sampletv.spagreen.fragments;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -6,8 +6,8 @@ import android.view.View;
 
 import androidx.leanback.app.ErrorSupportFragment;
 
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.ui.activity.ErrorActivity;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.ui.activity.ErrorActivity;
 
 
 public class ErrorFragment extends ErrorSupportFragment {
@@ -29,7 +29,7 @@ public class ErrorFragment extends ErrorSupportFragment {
     }
 
     void setErrorContent() {
-        setImageDrawable(getActivity().getResources().getDrawable(R.drawable.lb_ic_sad_cloud));
+        setImageDrawable(getActivity().getResources().getDrawable(androidx.leanback.R.drawable.lb_ic_sad_cloud));
         setMessage(getResources().getString(R.string.no_internet));
         setDefaultBackground(TRANSLUCENT);
 

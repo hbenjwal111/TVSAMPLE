@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.ui;
+package com.sampletv.spagreen.ui;
 
 import android.content.Context;
 import android.content.pm.PackageManager;

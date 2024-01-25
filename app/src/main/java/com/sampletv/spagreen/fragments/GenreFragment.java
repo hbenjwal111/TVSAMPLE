@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.fragments;
+package com.sampletv.spagreen.fragments;
 
 
 import android.content.Context;
@@ -19,16 +19,16 @@ import androidx.leanback.widget.RowPresenter;
 import androidx.leanback.widget.VerticalGridPresenter;
 
 
-import com.oxootv.spagreen.Config;
-import com.oxootv.spagreen.NetworkInst;
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.model.Genre;
-import com.oxootv.spagreen.network.RetrofitClient;
-import com.oxootv.spagreen.network.api.GenreApi;
-import com.oxootv.spagreen.ui.activity.ErrorActivity;
-import com.oxootv.spagreen.ui.activity.ItemGenreActivity;
-import com.oxootv.spagreen.ui.activity.LeanbackActivity;
-import com.oxootv.spagreen.ui.presenter.GenrePresenter;
+import com.sampletv.spagreen.Config;
+import com.sampletv.spagreen.NetworkInst;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.model.Genre;
+import com.sampletv.spagreen.network.RetrofitClient;
+import com.sampletv.spagreen.network.api.GenreApi;
+import com.sampletv.spagreen.ui.activity.ErrorActivity;
+import com.sampletv.spagreen.ui.activity.ItemGenreActivity;
+import com.sampletv.spagreen.ui.activity.LeanbackActivity;
+import com.sampletv.spagreen.ui.presenter.GenrePresenter;
 
 import java.util.ArrayList;
 import java.util.List;

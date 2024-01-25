@@ -13,7 +13,7 @@
  *
  */
 
-package com.oxootv.spagreen.music_service;
+package com.sampletv.spagreen.music_service;
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *

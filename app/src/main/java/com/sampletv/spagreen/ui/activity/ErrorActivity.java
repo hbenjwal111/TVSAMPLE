@@ -1,11 +1,12 @@
-package com.oxootv.spagreen.ui.activity;
-
-import androidx.fragment.app.FragmentActivity;
+package com.sampletv.spagreen.ui.activity;
 
 import android.os.Bundle;
 
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.fragments.ErrorFragment;
+import androidx.fragment.app.FragmentActivity;
+
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.fragments.ErrorFragment;
+
 
 public class ErrorActivity extends FragmentActivity {
 

@@ -1,9 +1,10 @@
-package com.oxootv.spagreen.ui.activity;
+package com.sampletv.spagreen.ui.activity;
+
+import static android.view.View.VISIBLE;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
@@ -31,15 +32,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.tvprovider.media.tv.TvContractCompat;
 
 import com.google.android.exoplayer2.C;
-import com.google.android.exoplayer2.ExoPlayer;
-import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.ext.rtmp.RtmpDataSourceFactory;
 import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory;
 import com.google.android.exoplayer2.extractor.ExtractorsFactory;
-import com.google.android.exoplayer2.source.ExtractorMediaSource;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.MergingMediaSource;
 import com.google.android.exoplayer2.source.SingleSampleMediaSource;
@@ -55,48 +53,41 @@ import com.google.android.exoplayer2.upstream.BandwidthMeter;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
-import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 import com.google.android.exoplayer2.util.MimeTypes;
 import com.google.android.exoplayer2.util.Util;
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.adapter.ServerAdapter;
-import com.oxootv.spagreen.adapter.SubtitleListAdapter;
-import com.oxootv.spagreen.database.DatabaseHelper;
-import com.oxootv.spagreen.model.Subtitle;
-import com.oxootv.spagreen.model.Video;
-import com.oxootv.spagreen.utils.PreferenceUtils;
-import com.oxootv.spagreen.utils.ToastMsg;
-import com.oxootv.spagreen.video_service.MediaSessionHelper;
-import com.oxootv.spagreen.video_service.MockDatabase;
-import com.oxootv.spagreen.video_service.PlaybackModel;
-import com.oxootv.spagreen.video_service.Subscription;
-import com.oxootv.spagreen.video_service.TvUtil;
-import com.oxootv.spagreen.video_service.VideoPlaybackActivity;
-import com.oxootv.spagreen.video_service.WatchNextAdapter;
+
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.adapter.ServerAdapter;
+import com.sampletv.spagreen.adapter.SubtitleListAdapter;
+import com.sampletv.spagreen.database.DatabaseHelper;
+import com.sampletv.spagreen.model.Subtitle;
+import com.sampletv.spagreen.model.Videos;
+import com.sampletv.spagreen.utils.PreferenceUtils;
+import com.sampletv.spagreen.utils.ToastMsg;
+import com.sampletv.spagreen.video_service.MediaSessionHelper;
+import com.sampletv.spagreen.video_service.PlaybackModel;
+import com.sampletv.spagreen.video_service.VideoPlaybackActivity;
+import com.sampletv.spagreen.video_service.WatchNextAdapter;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
-import at.huber.youtubeExtractor.VideoMeta;
-import at.huber.youtubeExtractor.YouTubeExtractor;
-import at.huber.youtubeExtractor.YtFile;
-
-import static android.view.View.TEXT_ALIGNMENT_GRAVITY;
-import static android.view.View.VISIBLE;
-import static java.lang.String.valueOf;
 
 public class PlayerActivity extends Activity {
     private static final String TAG = "PlayerActivity";
     private static final String CLASS_NAME = "com.oxoo.spagreen.ui.activity.PlayerActivity";
+    private static final int MAKE_BROWSABLE_REQUEST_CODE = 9001;
+    boolean doubleBackToExitPressedOnce = false;
+    boolean channelExists;
     private PlayerView exoPlayerView;
     private SimpleExoPlayer player;
     private RelativeLayout rootLayout;
     private MediaSource mediaSource;
     private boolean isPlaying;
-    private List<Video> videos = new ArrayList<>();
-    private Video video = null;
+    private List<Videos> videosses = new ArrayList<>();
+    private Videos videoss = null;
     private String url = "";
     private String videoType = "";
     private String category = "";
@@ -109,7 +100,6 @@ public class PlayerActivity extends Activity {
     private ProgressBar progressBar;
     private PowerManager.WakeLock wakeLock;
     private MediaSession session;
-
     private long mChannelId;
     private long mStartingPosition;
     private PlaybackModel model;
@@ -130,7 +120,7 @@ public class PlayerActivity extends Activity {
         videoType = model.getVideoType();
         category = model.getCategory();
         if (model.getVideo() != null)
-            video = model.getVideo();
+            //videoss = model.getVideo();
         if (model.getCategory().equals("movie") && mChannelId > -1L && model.getIsPaid().equals("1")) {
             //Paid Content from Channel
             //check user has subscription or not
@@ -149,7 +139,7 @@ public class PlayerActivity extends Activity {
 
         intiViews();
 
-        initVideoPlayer(url, videoType);
+      //  initVideoPlayer(url, videoType);
     }
 
     private void intiViews() {
@@ -175,8 +165,8 @@ public class PlayerActivity extends Activity {
         if (category.equalsIgnoreCase("tvseries")) {
             serverButton.setVisibility(View.GONE);
             //hide subtitle button if there is no subtitle
-            if (video != null) {
-                if (video.getSubtitle().isEmpty()) {
+            if (videoss != null) {
+                if (videoss.getSubtitle().isEmpty()) {
                     subtitleButton.setVisibility(View.GONE);
                 }
             } else {
@@ -186,24 +176,23 @@ public class PlayerActivity extends Activity {
 
         if (category.equalsIgnoreCase("movie")) {
             if (model.getVideoList() != null)
-                videos.clear();
-                videos = model.getVideoList();
+                videosses.clear();
+           // videosses = model.getVideoList();
             //hide subtitle button if there is no subtitle
-            if (video != null) {
-                if (video.getSubtitle().isEmpty()) {
+            if (videoss != null) {
+                if (videoss.getSubtitle().isEmpty()) {
                     subtitleButton.setVisibility(View.GONE);
                 }
-            }else {
+            } else {
                 subtitleButton.setVisibility(View.GONE);
             }
-            if (videos != null) {
-                if (videos.size() < 1)
+            if (videosses != null) {
+                if (videosses.size() < 1)
                     serverButton.setVisibility(View.GONE);
             }
 
         }
     }
-
 
     @Override
     protected void onStart() {
@@ -224,7 +213,7 @@ public class PlayerActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //open server dialog
-                openServerDialog(videos);
+                openServerDialog(videosses);
             }
         });
 
@@ -236,7 +225,7 @@ public class PlayerActivity extends Activity {
                 .load(model.getCardImageUrl())
                 .placeholder(R.drawable.poster_placeholder)
                 .centerCrop()
-                .resize(120,200)
+                .resize(120, 200)
                 .error(R.drawable.poster_placeholder)
                 .into(posterImageView);
     }
@@ -248,8 +237,6 @@ public class PlayerActivity extends Activity {
         //time to set media session active
         super.onUserLeaveHint();
     }
-
-    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -293,7 +280,7 @@ public class PlayerActivity extends Activity {
                     exoPlayerView.hideController();
                 } else {
                     if (doubleBackToExitPressedOnce) {
-                        releasePlayer();
+                        //releasePlayer();
                         mediaSessionHelper.stopMediaSession();
                         finish();
                     } else {
@@ -328,21 +315,21 @@ public class PlayerActivity extends Activity {
 
     }
 
-    private void openServerDialog(List<Video> videos) {
-        if (videos != null) {
-            List<Video> videoList = new ArrayList<>();
-            videoList.clear();
+    private void openServerDialog(List<Videos> videosses) {
+        if (videosses != null) {
+            List<Videos> videossList = new ArrayList<>();
+            videossList.clear();
 
-            for (Video video : videos) {
-                if (!video.getFileType().equalsIgnoreCase("embed")) {
-                    videoList.add(video);
+            for (Videos videoss : videosses) {
+                if (!videoss.getFileType().equalsIgnoreCase("embed")) {
+                    videossList.add(videoss);
                 }
             }
 
             AlertDialog.Builder builder = new AlertDialog.Builder(PlayerActivity.this);
             View view = LayoutInflater.from(PlayerActivity.this).inflate(R.layout.layout_server_tv, null);
             RecyclerView serverRv = view.findViewById(R.id.serverRv);
-            ServerAdapter serverAdapter = new ServerAdapter(PlayerActivity.this, videoList, "movie");
+            ServerAdapter serverAdapter = new ServerAdapter(PlayerActivity.this, videossList, "movie");
             serverRv.setLayoutManager(new LinearLayoutManager(PlayerActivity.this));
             serverRv.setHasFixedSize(true);
             serverRv.setAdapter(serverAdapter);
@@ -365,7 +352,7 @@ public class PlayerActivity extends Activity {
             serverAdapter.setOnItemClickListener(new ServerAdapter.OnItemClickListener() {
 
                 @Override
-                public void onItemClick(View view, Video obj, int position, ServerAdapter.OriginalViewHolder holder) {
+                public void onItemClick(View view, Videos obj, int position, ServerAdapter.OriginalViewHolder holder) {
                     Intent playerIntent = new Intent(PlayerActivity.this, PlayerActivity.class);
                     PlaybackModel video = new PlaybackModel();
                     video.setId(model.getId());
@@ -393,12 +380,12 @@ public class PlayerActivity extends Activity {
     }
 
     private void openSubtitleDialog() {
-        if (video != null) {
-            if (!video.getSubtitle().isEmpty()) {
+        if (videoss != null) {
+            if (!videoss.getSubtitle().isEmpty()) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(PlayerActivity.this);
                 View view = LayoutInflater.from(PlayerActivity.this).inflate(R.layout.layout_subtitle_dialog, null);
                 RecyclerView serverRv = view.findViewById(R.id.serverRv);
-                SubtitleListAdapter adapter = new SubtitleListAdapter(PlayerActivity.this, video.getSubtitle());
+                SubtitleListAdapter adapter = new SubtitleListAdapter(PlayerActivity.this, videoss.getSubtitle());
                 serverRv.setLayoutManager(new LinearLayoutManager(PlayerActivity.this));
                 serverRv.setHasFixedSize(true);
                 serverRv.setAdapter(adapter);
@@ -419,7 +406,7 @@ public class PlayerActivity extends Activity {
                 adapter.setListener(new SubtitleListAdapter.OnSubtitleItemClickListener() {
                     @Override
                     public void onSubtitleItemClick(View view, Subtitle subtitle, int position, SubtitleListAdapter.SubtitleViewHolder holder) {
-                        setSelectedSubtitle(mediaSource, subtitle.getUrl());
+                    //    setSelectedSubtitle(mediaSource, subtitle.getUrl());
                         dialog.dismiss();
                     }
                 });
@@ -432,7 +419,7 @@ public class PlayerActivity extends Activity {
         }
     }
 
-    private void setSelectedSubtitle(MediaSource mediaSource, String url) {
+   /* private void setSelectedSubtitle(MediaSource mediaSource, String url) {
         MergingMediaSource mergedSource;
         if (url != null) {
             Uri subtitleUri = Uri.parse(url);
@@ -512,7 +499,7 @@ public class PlayerActivity extends Activity {
         seekToStartPosition();
 
         player.addListener(new Player.DefaultEventListener() {
-            WatchNextAdapter watchNextAdapter = new WatchNextAdapter();
+            final WatchNextAdapter watchNextAdapter = new WatchNextAdapter();
 
             @Override
             public void onPlayerStateChanged(boolean playWhenReady, int playbackState) {
@@ -572,7 +559,6 @@ public class PlayerActivity extends Activity {
             }
         }
     }
-
 
     private MediaSource mp3MediaSource(Uri uri) {
         DataSource.Factory dataSourceFactory = new DefaultDataSourceFactory(getApplicationContext(), "ExoplayerDemo");
@@ -658,7 +644,7 @@ public class PlayerActivity extends Activity {
     protected void onResume() {
         super.onResume();
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
-        wakeLock.acquire(10*60*1000L /*10 minutes*/);
+        wakeLock.acquire(10 * 60 * 1000L *//*10 minutes*//*);
     }
 
     private void releasePlayer() {
@@ -671,12 +657,9 @@ public class PlayerActivity extends Activity {
         }
     }
 
-    private long getChannelId(){
-       return mChannelId;
+    private long getChannelId() {
+        return mChannelId;
     }
-
-    boolean channelExists;
-    private static final int MAKE_BROWSABLE_REQUEST_CODE = 9001;
 
     private void createChannel() {
         Subscription movieSubscription =
@@ -685,8 +668,31 @@ public class PlayerActivity extends Activity {
         new AddChannelTask(this).execute(movieSubscription);
     }
 
+    private void promptUserToDisplayChannel(long channelId) {
+        // TODO: step 17 prompt user.
+        TvContractCompat.requestChannelBrowsable(this, channelId);
+        *//*Intent intent = new Intent(TvContractCompat.ACTION_REQUEST_CHANNEL_BROWSABLE);
+        intent.putExtra(TvContractCompat.EXTRA_CHANNEL_ID, channelId);
+        try {
+            this.startActivityForResult(intent, MAKE_BROWSABLE_REQUEST_CODE);
+        } catch (ActivityNotFoundException e) {
+            Log.e(TAG, "Could not start activity: " + intent.getAction(), e);
+        }*//*
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // TODO step 18 handle response
+        if (resultCode == RESULT_OK) {
+            Toast.makeText(this, "Channel Added", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Channel not added", Toast.LENGTH_LONG).show();
+        }
+    }
+
     @SuppressLint("StaticFieldLeak")
-    private  class AddChannelTask extends AsyncTask<Subscription, Void, Long> {
+    private class AddChannelTask extends AsyncTask<Subscription, Void, Long> {
         private final Context context;
 
         public AddChannelTask(Context context) {
@@ -695,7 +701,7 @@ public class PlayerActivity extends Activity {
 
         @Override
         protected Long doInBackground(Subscription... varArgs) {
-            List<Subscription> subscriptions = Arrays.asList(varArgs);
+            List<Subscription> subscriptions = Collections.singletonList(varArgs);
             if (subscriptions.size() != 1) {
                 return -1L;
             }
@@ -716,30 +722,7 @@ public class PlayerActivity extends Activity {
             if (!channelExists)
                 promptUserToDisplayChannel(channelId);
         }
-    }
-
-    private void promptUserToDisplayChannel(long channelId) {
-        // TODO: step 17 prompt user.
-        TvContractCompat.requestChannelBrowsable(this, channelId);
-        /*Intent intent = new Intent(TvContractCompat.ACTION_REQUEST_CHANNEL_BROWSABLE);
-        intent.putExtra(TvContractCompat.EXTRA_CHANNEL_ID, channelId);
-        try {
-            this.startActivityForResult(intent, MAKE_BROWSABLE_REQUEST_CODE);
-        } catch (ActivityNotFoundException e) {
-            Log.e(TAG, "Could not start activity: " + intent.getAction(), e);
-        }*/
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        // TODO step 18 handle response
-        if (resultCode == RESULT_OK) {
-            Toast.makeText(this, "Channel Added", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(this, "Channel not added", Toast.LENGTH_LONG).show();
-        }
-    }
+    }*/
 }
 
 

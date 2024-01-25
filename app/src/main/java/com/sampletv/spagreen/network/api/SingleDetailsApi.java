@@ -1,7 +1,8 @@
-package com.oxootv.spagreen.network.api;
+package com.sampletv.spagreen.network.api;
 
 
-import com.oxootv.spagreen.model.SingleDetails;
+
+import com.sampletv.spagreen.model.SingleDetails;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

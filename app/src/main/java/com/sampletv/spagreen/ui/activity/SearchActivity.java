@@ -1,10 +1,11 @@
-package com.oxootv.spagreen.ui.activity;
+package com.sampletv.spagreen.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.oxootv.spagreen.R;
+import com.sampletv.spagreen.R;
+
 
 public class SearchActivity extends Activity {
 

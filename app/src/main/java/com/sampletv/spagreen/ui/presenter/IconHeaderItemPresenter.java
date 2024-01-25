@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.ui.presenter;
+package com.sampletv.spagreen.ui.presenter;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -14,8 +14,8 @@ import androidx.leanback.widget.ListRow;
 import androidx.leanback.widget.Presenter;
 import androidx.leanback.widget.RowHeaderPresenter;
 
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.ui.IconHeaderItem;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.ui.IconHeaderItem;
 
 
 /**
@@ -30,7 +30,7 @@ public class IconHeaderItemPresenter extends RowHeaderPresenter {
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup) {
         mUnselectedAlpha = viewGroup.getResources()
-                .getFraction(R.fraction.lb_browse_header_unselect_alpha, 1, 1);
+                .getFraction(androidx.leanback.R.fraction.lb_browse_header_unselect_alpha, 1, 1);
         LayoutInflater inflater = (LayoutInflater) viewGroup.getContext()
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 

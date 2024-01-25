@@ -1,7 +1,8 @@
-package com.oxootv.spagreen.network.api;
+package com.sampletv.spagreen.network.api;
 
 
-import com.oxootv.spagreen.model.RadioCategory;
+
+import com.sampletv.spagreen.model.RadioCategory;
 
 import java.util.List;
 

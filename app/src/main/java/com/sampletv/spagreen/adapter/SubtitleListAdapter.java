@@ -1,5 +1,6 @@
-package com.oxootv.spagreen.adapter;
+package com.sampletv.spagreen.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +10,8 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.model.Subtitle;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.model.Subtitle;
 
 import java.util.List;
 
@@ -33,7 +34,7 @@ public class SubtitleListAdapter extends RecyclerView.Adapter<SubtitleListAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SubtitleViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SubtitleViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Subtitle subtitle = subtitleList.get(position);
         holder.subtitleNameTv.setText(subtitle.getLanguage());
         holder.subtitleNameTv.setOnClickListener(new View.OnClickListener() {

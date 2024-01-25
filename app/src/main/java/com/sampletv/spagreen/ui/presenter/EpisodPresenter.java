@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.ui.presenter;
+package com.sampletv.spagreen.ui.presenter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,16 +15,16 @@ import android.view.WindowManager;
 import androidx.leanback.widget.ImageCardView;
 import androidx.leanback.widget.Presenter;
 
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.database.DatabaseHelper;
-import com.oxootv.spagreen.model.Episode;
-import com.oxootv.spagreen.model.Video;
-import com.oxootv.spagreen.ui.activity.PlayerActivity;
-import com.oxootv.spagreen.utils.PaidDialog;
-import com.oxootv.spagreen.utils.PreferenceUtils;
-import com.oxootv.spagreen.utils.ToastMsg;
-import com.oxootv.spagreen.video_service.PlaybackModel;
-import com.oxootv.spagreen.video_service.VideoPlaybackActivity;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.database.DatabaseHelper;
+import com.sampletv.spagreen.model.Episode;
+import com.sampletv.spagreen.model.Videos;
+import com.sampletv.spagreen.ui.activity.PlayerActivity;
+import com.sampletv.spagreen.utils.PaidDialog;
+import com.sampletv.spagreen.utils.PreferenceUtils;
+import com.sampletv.spagreen.utils.ToastMsg;
+import com.sampletv.spagreen.video_service.PlaybackModel;
+import com.sampletv.spagreen.video_service.VideoPlaybackActivity;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -49,7 +49,7 @@ public class EpisodPresenter extends Presenter {
     public void onBindViewHolder(Presenter.ViewHolder viewHolder, Object item) {
         final Episode video = (Episode) item;
         ((ViewHolder) viewHolder).mCardView.setTitleText(video.getEpisodesName());
-        ((ViewHolder) viewHolder).mCardView.findViewById(R.id.content_text).setVisibility(View.GONE);
+        ((ViewHolder) viewHolder).mCardView.findViewById(R.id.title).setVisibility(View.GONE);
         ((ViewHolder) viewHolder).mCardView.setMainImageDimensions(CARD_WIDTH, CARD_HEIGHT);
         ((ViewHolder) viewHolder).updateCardViewImage(video.getImageUrl());
         final DatabaseHelper db = new DatabaseHelper(mContext);
@@ -71,9 +71,9 @@ public class EpisodPresenter extends Presenter {
                             model.setVideoType(video.getFileType());
                             model.setCategory("tvseries");
                             model.setVideoUrl(video.getFileUrl());
-                            Video videoModel = new Video();
-                            videoModel.setSubtitle(video.getSubtitle());
-                            model.setVideo(videoModel);
+                            Videos videossModel = new Videos();
+                            videossModel.setSubtitle(video.getSubtitle());
+                            model.setVideo(videossModel);
                             model.setCardImageUrl(video.getCardBackgroundUrl());
                             model.setBgImageUrl(video.getImageUrl());
                             model.setIsPaid(video.getIsPaid());
@@ -105,9 +105,9 @@ public class EpisodPresenter extends Presenter {
                     model.setVideoType(video.getFileType());
                     model.setCategory("tvseries");
                     model.setVideoUrl(video.getFileUrl());
-                    Video videoModel = new Video();
-                    videoModel.setSubtitle(video.getSubtitle());
-                    model.setVideo(videoModel);
+                    Videos videossModel = new Videos();
+                    videossModel.setSubtitle(video.getSubtitle());
+                    model.setVideo(videossModel);
                     model.setCardImageUrl(video.getCardBackgroundUrl());
                     model.setBgImageUrl(video.getImageUrl());
                     model.setIsPaid(video.getIsPaid());

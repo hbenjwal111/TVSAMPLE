@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.video_service;
+package com.sampletv.spagreen.video_service;
 
 import android.app.Activity;
 import android.app.FragmentTransaction;
@@ -11,12 +11,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.model.MovieSingleDetails;
-import com.oxootv.spagreen.model.Video;
 
 import androidx.core.os.BuildCompat;
 import androidx.tvprovider.media.tv.TvContractCompat;
+
+import com.sampletv.spagreen.R;
 
 import java.util.Arrays;
 import java.util.List;

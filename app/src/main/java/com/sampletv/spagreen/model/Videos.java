@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.model;
+package com.sampletv.spagreen.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.List;
 
-public class Video implements Serializable {
+public class Videos implements Serializable {
 
     @SerializedName("video_file_id")
     @Expose

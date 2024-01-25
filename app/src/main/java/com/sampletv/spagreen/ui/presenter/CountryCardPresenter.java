@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.ui.presenter;
+package com.sampletv.spagreen.ui.presenter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -12,8 +12,8 @@ import android.widget.TextView;
 import androidx.leanback.widget.ImageCardView;
 import androidx.leanback.widget.Presenter;
 
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.model.CountryModel;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.model.CountryModel;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -38,7 +38,7 @@ public class CountryCardPresenter extends Presenter {
         cardView.setFocusable(true);
         cardView.setFocusableInTouchMode(true);
         cardView.requestLayout();
-        ((TextView) cardView.findViewById(R.id.content_text)).setTextColor(Color.LTGRAY);
+        ((TextView) cardView.findViewById(R.id.title)).setTextColor(Color.LTGRAY);
 
        // updateCardBackgroundColor(cardView, true);
 
@@ -52,7 +52,7 @@ public class CountryCardPresenter extends Presenter {
         // background is temporarily visible during animations.
 
         view.setBackgroundColor(color);
-        view.findViewById(R.id.info_field).setBackgroundColor(color);
+        view.findViewById(R.id.title).setBackgroundColor(color);
     }
 
 

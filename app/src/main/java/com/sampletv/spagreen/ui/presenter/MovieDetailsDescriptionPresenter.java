@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.ui.presenter;
+package com.sampletv.spagreen.ui.presenter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,9 +7,10 @@ import android.view.ViewGroup;
 
 import androidx.leanback.widget.Presenter;
 
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.model.MovieSingleDetails;
-import com.oxootv.spagreen.ui.VideoDetailsViewHolder;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.model.MovieSingleDetails;
+import com.sampletv.spagreen.ui.VideoDetailsViewHolder;
+
 
 public class MovieDetailsDescriptionPresenter extends Presenter {
 

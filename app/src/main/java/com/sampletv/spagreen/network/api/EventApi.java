@@ -1,6 +1,7 @@
-package com.oxootv.spagreen.network.api;
+package com.sampletv.spagreen.network.api;
 
-import com.oxootv.spagreen.model.Event;
+
+import com.sampletv.spagreen.model.Event;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.network;
+package com.sampletv.spagreen.network;
 
 import java.io.IOException;
 

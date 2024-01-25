@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.fragments;
+package com.sampletv.spagreen.fragments;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,14 +15,14 @@ import androidx.leanback.widget.Row;
 import androidx.leanback.widget.RowPresenter;
 import androidx.leanback.widget.VerticalGridPresenter;
 
-import com.oxootv.spagreen.Config;
-import com.oxootv.spagreen.model.Movie;
-import com.oxootv.spagreen.network.RetrofitClient;
-import com.oxootv.spagreen.network.api.MovieApi;
-import com.oxootv.spagreen.ui.BackgroundHelper;
-import com.oxootv.spagreen.ui.activity.ItemGenreActivity;
-import com.oxootv.spagreen.ui.activity.VideoDetailsActivity;
-import com.oxootv.spagreen.ui.presenter.VerticalCardPresenter;
+import com.sampletv.spagreen.Config;
+import com.sampletv.spagreen.model.Movie;
+import com.sampletv.spagreen.network.RetrofitClient;
+import com.sampletv.spagreen.network.api.MovieApi;
+import com.sampletv.spagreen.ui.BackgroundHelper;
+import com.sampletv.spagreen.ui.activity.ItemGenreActivity;
+import com.sampletv.spagreen.ui.activity.VideoDetailsActivity;
+import com.sampletv.spagreen.ui.presenter.VerticalCardPresenter;
 
 import java.util.ArrayList;
 import java.util.List;

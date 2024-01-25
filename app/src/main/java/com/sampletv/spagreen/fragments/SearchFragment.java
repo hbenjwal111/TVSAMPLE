@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.fragments;
+package com.sampletv.spagreen.fragments;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -23,18 +23,18 @@ import androidx.leanback.widget.Row;
 import androidx.leanback.widget.RowPresenter;
 import androidx.leanback.widget.SpeechRecognitionCallback;
 
-import com.oxootv.spagreen.Config;
-import com.oxootv.spagreen.model.Movie;
-import com.oxootv.spagreen.model.SearchContent;
-import com.oxootv.spagreen.model.SearchModel;
-import com.oxootv.spagreen.model.TvModel;
-import com.oxootv.spagreen.network.RetrofitClient;
-import com.oxootv.spagreen.network.api.SearchApi;
-import com.oxootv.spagreen.ui.Utils;
-import com.oxootv.spagreen.ui.activity.PlayerActivity;
-import com.oxootv.spagreen.ui.activity.VideoDetailsActivity;
-import com.oxootv.spagreen.ui.presenter.SearchCardPresenter;
-import com.oxootv.spagreen.ui.presenter.TvSearchPresenter;
+import com.sampletv.spagreen.Config;
+import com.sampletv.spagreen.model.Movie;
+import com.sampletv.spagreen.model.SearchContent;
+import com.sampletv.spagreen.model.SearchModel;
+import com.sampletv.spagreen.model.TvModel;
+import com.sampletv.spagreen.network.RetrofitClient;
+import com.sampletv.spagreen.network.api.SearchApi;
+import com.sampletv.spagreen.ui.Utils;
+import com.sampletv.spagreen.ui.activity.PlayerActivity;
+import com.sampletv.spagreen.ui.activity.VideoDetailsActivity;
+import com.sampletv.spagreen.ui.presenter.SearchCardPresenter;
+import com.sampletv.spagreen.ui.presenter.TvSearchPresenter;
 
 //import org.jetbrains.annotations.NotNull;
 

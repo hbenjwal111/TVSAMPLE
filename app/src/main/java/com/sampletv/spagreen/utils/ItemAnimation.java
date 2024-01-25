@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.utils;
+package com.sampletv.spagreen.utils;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;

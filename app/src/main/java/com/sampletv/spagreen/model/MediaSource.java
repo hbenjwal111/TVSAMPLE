@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.model;
+package com.sampletv.spagreen.model;
 
 public class MediaSource {
     private String label;

@@ -1,5 +1,6 @@
-package com.oxootv.spagreen.database;
+package com.sampletv.spagreen.database;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -7,13 +8,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.oxootv.spagreen.utils.PreferenceUtils;
-import com.oxootv.spagreen.model.ActiveStatus;
-import com.oxootv.spagreen.model.AdsConfig;
-import com.oxootv.spagreen.model.AppConfig;
-import com.oxootv.spagreen.model.Configuration;
-import com.oxootv.spagreen.model.PaymentConfig;
-import com.oxootv.spagreen.model.User;
+import com.sampletv.spagreen.utils.PreferenceUtils;
+import com.sampletv.spagreen.model.ActiveStatus;
+import com.sampletv.spagreen.model.AdsConfig;
+import com.sampletv.spagreen.model.AppConfig;
+import com.sampletv.spagreen.model.Configuration;
+import com.sampletv.spagreen.model.PaymentConfig;
+import com.sampletv.spagreen.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -160,6 +161,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return id;
     }
 
+    @SuppressLint("Range")
     public Configuration getConfigurationData() {
         SQLiteDatabase db = this.getReadableDatabase();
         Configuration configuration = new Configuration();
@@ -283,6 +285,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return id;
     }
 
+    @SuppressLint("Range")
     public ActiveStatus getActiveStatusData() {
         SQLiteDatabase db = this.getReadableDatabase();
         ActiveStatus activeStatus = new ActiveStatus();
@@ -364,6 +367,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return id;
     }
 
+    @SuppressLint("Range")
     public User getUserData() {
         // get readable database as we are not inserting anything
         SQLiteDatabase db = this.getReadableDatabase();
@@ -500,6 +504,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    @SuppressLint("Range")
     public Work getWorkByDownloadId(int downloadId) {
         String sql = "SELECT * FROM " + DOWNLOAD_TABLE_NAME + " WHERE " + DOWNLOAD_ID + "=" + downloadId;
 
@@ -524,6 +529,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    @SuppressLint("Range")
     public List<Work> getAllWork() {
         List<Work> works = new ArrayList<>();
 

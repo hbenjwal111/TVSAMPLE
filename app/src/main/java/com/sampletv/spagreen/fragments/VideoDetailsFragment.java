@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.fragments;
+package com.sampletv.spagreen.fragments;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -34,34 +34,34 @@ import androidx.palette.graphics.Palette;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.oxootv.spagreen.Config;
-import com.oxootv.spagreen.ui.activity.PlayerActivity;
-import com.oxootv.spagreen.utils.PreferenceUtils;
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.adapter.ServerAdapter;
-import com.oxootv.spagreen.database.DatabaseHelper;
-import com.oxootv.spagreen.model.Episode;
-import com.oxootv.spagreen.model.FavoriteModel;
-import com.oxootv.spagreen.model.MovieSingleDetails;
-import com.oxootv.spagreen.model.RelatedMovie;
-import com.oxootv.spagreen.model.Season;
-import com.oxootv.spagreen.model.Video;
-import com.oxootv.spagreen.network.RetrofitClient;
-import com.oxootv.spagreen.network.api.DetailsApi;
-import com.oxootv.spagreen.network.api.FavoriteApi;
-import com.oxootv.spagreen.ui.BackgroundHelper;
-import com.oxootv.spagreen.ui.PaletteColors;
-import com.oxootv.spagreen.ui.Utils;
+import com.sampletv.spagreen.Config;
+import com.sampletv.spagreen.model.Videos;
+import com.sampletv.spagreen.ui.activity.PlayerActivity;
+import com.sampletv.spagreen.utils.PreferenceUtils;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.adapter.ServerAdapter;
+import com.sampletv.spagreen.database.DatabaseHelper;
+import com.sampletv.spagreen.model.Episode;
+import com.sampletv.spagreen.model.FavoriteModel;
+import com.sampletv.spagreen.model.MovieSingleDetails;
+import com.sampletv.spagreen.model.RelatedMovie;
+import com.sampletv.spagreen.model.Season;
+import com.sampletv.spagreen.network.RetrofitClient;
+import com.sampletv.spagreen.network.api.DetailsApi;
+import com.sampletv.spagreen.network.api.FavoriteApi;
+import com.sampletv.spagreen.ui.BackgroundHelper;
+import com.sampletv.spagreen.ui.PaletteColors;
+import com.sampletv.spagreen.ui.Utils;
 
-import com.oxootv.spagreen.ui.presenter.ActionButtonPresenter;
-import com.oxootv.spagreen.ui.presenter.CustomMovieDetailsPresenter;
-import com.oxootv.spagreen.ui.presenter.EpisodPresenter;
-import com.oxootv.spagreen.ui.presenter.MovieDetailsDescriptionPresenter;
-import com.oxootv.spagreen.ui.presenter.RelatedPresenter;
-import com.oxootv.spagreen.utils.PaidDialog;
-import com.oxootv.spagreen.utils.ToastMsg;
-import com.oxootv.spagreen.video_service.PlaybackModel;
-import com.oxootv.spagreen.video_service.VideoPlaybackActivity;
+import com.sampletv.spagreen.ui.presenter.ActionButtonPresenter;
+import com.sampletv.spagreen.ui.presenter.CustomMovieDetailsPresenter;
+import com.sampletv.spagreen.ui.presenter.EpisodPresenter;
+import com.sampletv.spagreen.ui.presenter.MovieDetailsDescriptionPresenter;
+import com.sampletv.spagreen.ui.presenter.RelatedPresenter;
+import com.sampletv.spagreen.utils.PaidDialog;
+import com.sampletv.spagreen.utils.ToastMsg;
+import com.sampletv.spagreen.video_service.PlaybackModel;
+import com.sampletv.spagreen.video_service.VideoPlaybackActivity;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
@@ -320,21 +320,21 @@ public class VideoDetailsFragment extends DetailsSupportFragment implements Pale
         return Math.round((float) dp * density);
     }
 
-    public void openServerDialog(final List<Video> videos) {
-        if (videos.size() != 0) {
-            List<Video> videoList = new ArrayList<>();
-            videoList.clear();
+    public void openServerDialog(final List<Videos> videosses) {
+        if (videosses.size() != 0) {
+            List<Videos> videossList = new ArrayList<>();
+            videossList.clear();
 
-            for (Video video : videos) {
-                if (!video.getFileType().equalsIgnoreCase("embed")) {
-                    videoList.add(video);
+            for (Videos videoss : videosses) {
+                if (!videoss.getFileType().equalsIgnoreCase("embed")) {
+                    videossList.add(videoss);
                 }
             }
 
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             View view = LayoutInflater.from(getActivity()).inflate(R.layout.layout_server_tv, null);
             RecyclerView serverRv = view.findViewById(R.id.serverRv);
-            ServerAdapter serverAdapter = new ServerAdapter(getActivity(), videoList, "movie");
+            ServerAdapter serverAdapter = new ServerAdapter(getActivity(), videossList, "movie");
             serverRv.setLayoutManager(new LinearLayoutManager(getActivity()));
             serverRv.setHasFixedSize(true);
             serverRv.setAdapter(serverAdapter);
@@ -357,7 +357,7 @@ public class VideoDetailsFragment extends DetailsSupportFragment implements Pale
             serverAdapter.setOnItemClickListener(new ServerAdapter.OnItemClickListener() {
 
                 @Override
-                public void onItemClick(View view, Video obj, int position, ServerAdapter.OriginalViewHolder holder) {
+                public void onItemClick(View view, Videos obj, int position, ServerAdapter.OriginalViewHolder holder) {
                     Bundle bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity())
                             .toBundle();
 
@@ -367,8 +367,8 @@ public class VideoDetailsFragment extends DetailsSupportFragment implements Pale
                     video.setDescription(movieDetails.getDescription());
                     video.setCategory("movie");
                     video.setVideo(obj);
-                    ArrayList<Video> videoListForIntent = new ArrayList<>(videoList);
-                    video.setVideoList(videoListForIntent);
+                    ArrayList<Videos> videossListForIntent = new ArrayList<>(videossList);
+                    video.setVideoList(videossListForIntent);
                     video.setVideoUrl(obj.getFileUrl());
                     video.setVideoType(obj.getFileType());
                     video.setBgImageUrl(movieDetails.getPosterUrl());

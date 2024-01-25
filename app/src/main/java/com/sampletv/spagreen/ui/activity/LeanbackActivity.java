@@ -1,12 +1,4 @@
-package com.oxootv.spagreen.ui.activity;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.leanback.widget.HorizontalGridView;
-import androidx.leanback.widget.SearchOrbView;
-import androidx.leanback.widget.VerticalGridView;
+package com.sampletv.spagreen.ui.activity;
 
 import android.content.Intent;
 import android.graphics.Rect;
@@ -17,21 +9,29 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.ImageView;
 
-import com.oxootv.spagreen.NetworkInst;
-import com.oxootv.spagreen.utils.PreferenceUtils;
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.fragments.CountryFragment;
-import com.oxootv.spagreen.fragments.CustomHeadersFragment;
-import com.oxootv.spagreen.fragments.CustomRowsFragment;
-import com.oxootv.spagreen.fragments.FavouriteFragment;
-import com.oxootv.spagreen.fragments.GenreFragment;
-import com.oxootv.spagreen.fragments.HomeFragment;
-import com.oxootv.spagreen.fragments.MoviesFragment;
-import com.oxootv.spagreen.fragments.MyAccountFragment;
-import com.oxootv.spagreen.fragments.TvSeriesFragment;
-import com.oxootv.spagreen.ui.CustomFrameLayout;
-import com.oxootv.spagreen.ui.Utils;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.leanback.widget.HorizontalGridView;
+import androidx.leanback.widget.SearchOrbView;
+import androidx.leanback.widget.VerticalGridView;
 
+
+import com.sampletv.spagreen.NetworkInst;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.fragments.CountryFragment;
+import com.sampletv.spagreen.fragments.CustomHeadersFragment;
+import com.sampletv.spagreen.fragments.CustomRowsFragment;
+import com.sampletv.spagreen.fragments.FavouriteFragment;
+import com.sampletv.spagreen.fragments.GenreFragment;
+import com.sampletv.spagreen.fragments.HomeFragment;
+import com.sampletv.spagreen.fragments.MoviesFragment;
+import com.sampletv.spagreen.fragments.MyAccountFragment;
+import com.sampletv.spagreen.fragments.TvSeriesFragment;
+import com.sampletv.spagreen.ui.CustomFrameLayout;
+import com.sampletv.spagreen.ui.Utils;
+import com.sampletv.spagreen.utils.PreferenceUtils;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -39,14 +39,13 @@ import java.util.LinkedHashMap;
 
 public class LeanbackActivity extends FragmentActivity {
     public static final String INTENT_EXTRA_VIDEO = "intentExtraVideo";
+    private static final float NAVIGATION_DRAWER_SCALE_FACTOR = 0.9f;
     private CustomHeadersFragment headersFragment;
     private Fragment rowsFragment;
     private ImageView logoIv;
     private LinkedHashMap<Integer, Fragment> fragments;
     private SearchOrbView orbView;
     private boolean navigationDrawerOpen;
-    private static final float NAVIGATION_DRAWER_SCALE_FACTOR = 0.9f;
-
     private CustomFrameLayout customFrameLayout;
     private boolean rowsContainerFocused;
 
@@ -125,7 +124,7 @@ public class LeanbackActivity extends FragmentActivity {
 
 
         headersFragment = new CustomHeadersFragment();
-        rowsFragment = (HomeFragment) fragments.get(0);
+        rowsFragment = fragments.get(0);
         customFrameLayout = (CustomFrameLayout) ((ViewGroup) this.findViewById(android.R.id.content)).getChildAt(0);
         setupCustomFrameLayout();
 

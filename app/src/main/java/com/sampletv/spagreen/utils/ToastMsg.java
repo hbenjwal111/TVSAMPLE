@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.utils;
+package com.sampletv.spagreen.utils;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 
-import com.oxootv.spagreen.R;
+import com.sampletv.spagreen.R;
 
 public class ToastMsg {
 

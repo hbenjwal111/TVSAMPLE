@@ -1,4 +1,4 @@
-package com.oxootv.spagreen;
+package com.sampletv.spagreen;
 
 public class Config {
     // copy your api url from php admin dashboard & paste below

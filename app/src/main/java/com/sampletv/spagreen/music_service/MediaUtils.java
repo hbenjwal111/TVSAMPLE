@@ -12,7 +12,7 @@
  * the License.
  *
  */
-package com.oxootv.spagreen.music_service;
+package com.sampletv.spagreen.music_service;
 
 
 public class MediaUtils {

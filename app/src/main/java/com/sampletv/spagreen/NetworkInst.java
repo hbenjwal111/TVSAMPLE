@@ -1,4 +1,4 @@
-package com.oxootv.spagreen;
+package com.sampletv.spagreen;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

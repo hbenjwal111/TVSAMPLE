@@ -1,5 +1,6 @@
-package com.oxootv.spagreen.ui.activity;
+package com.sampletv.spagreen.ui.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,20 +15,19 @@ import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.IdpResponse;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.player.Activity;
-import com.oxootv.spagreen.BuildConfig;
-import com.oxootv.spagreen.Config;
-import com.oxootv.spagreen.Constants;
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.database.DatabaseHelper;
-import com.oxootv.spagreen.model.ActiveStatus;
-import com.oxootv.spagreen.model.User;
-import com.oxootv.spagreen.network.RetrofitClient;
-import com.oxootv.spagreen.network.api.FirebaseAuthApi;
-import com.oxootv.spagreen.network.api.SubscriptionApi;
-import com.oxootv.spagreen.utils.ToastMsg;
+import com.sampletv.spagreen.Config;
+import com.sampletv.spagreen.Constants;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.database.DatabaseHelper;
+import com.sampletv.spagreen.model.ActiveStatus;
+import com.sampletv.spagreen.model.User;
+import com.sampletv.spagreen.network.RetrofitClient;
+import com.sampletv.spagreen.network.api.FirebaseAuthApi;
+import com.sampletv.spagreen.network.api.SubscriptionApi;
+import com.sampletv.spagreen.utils.ToastMsg;
 
-import java.util.Arrays;
+
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -38,8 +38,8 @@ import retrofit2.Retrofit;
 public class LoginChooserActivity extends Activity {
     private static final String TAG = "ActivityLoginChooser";
     private static final int RC_PHONE_SIGN_IN = 124;
+    private static final int RC_GOOGLE_SIGN_IN = 123;
     private FirebaseAuth firebaseAuth;
-    private static int RC_GOOGLE_SIGN_IN = 123;
     private ProgressBar progressBar;
     private Button googleSignInButton, phoneSignInButton;
 
@@ -63,10 +63,10 @@ public class LoginChooserActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (!Config.ENABLE_GOOGLE_LOGIN){
+        if (!Config.ENABLE_GOOGLE_LOGIN) {
             googleSignInButton.setVisibility(View.GONE);
         }
-        if (!Config.ENABLE_PHONE_LOGIN){
+        if (!Config.ENABLE_PHONE_LOGIN) {
             phoneSignInButton.setVisibility(View.GONE);
         }
 
@@ -85,15 +85,6 @@ public class LoginChooserActivity extends Activity {
         });
     }
 
-    @Override
-    public String customView() {
-        return Config.PURCHASE_CODE;
-    }
-
-    @Override
-    public String packageName() {
-        return BuildConfig.APPLICATION_ID;
-    }
 
     public void signUpBtn(View view) {
         Intent intent = new Intent(LoginChooserActivity.this, SignUpActivity.class);
@@ -121,7 +112,7 @@ public class LoginChooserActivity extends Activity {
         } else {
             progressBar.setVisibility(View.GONE);
             // Choose authentication providers
-            List<AuthUI.IdpConfig> providers = Arrays.asList(
+            List<AuthUI.IdpConfig> providers = Collections.singletonList(
                     new AuthUI.IdpConfig.PhoneBuilder().build());
             // Create and launch sign-in intent
             startActivityForResult(
@@ -146,7 +137,7 @@ public class LoginChooserActivity extends Activity {
         } else {
             progressBar.setVisibility(View.GONE);
             // Choose authentication providers
-            List<AuthUI.IdpConfig> providers = Arrays.asList(
+            List<AuthUI.IdpConfig> providers = Collections.singletonList(
                     new AuthUI.IdpConfig.GoogleBuilder().build());
             // Create and launch sign-in intent
             startActivityForResult(
@@ -199,7 +190,7 @@ public class LoginChooserActivity extends Activity {
         try {
             phone = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
             uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             new ToastMsg(LoginChooserActivity.this).toastIconError(getResources().getString(R.string.something_went_wrong));
             return;
         }

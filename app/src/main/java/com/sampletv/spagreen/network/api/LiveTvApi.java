@@ -1,7 +1,9 @@
-package com.oxootv.spagreen.network.api;
+package com.sampletv.spagreen.network.api;
 
-import com.oxootv.spagreen.model.Channel;
-import com.oxootv.spagreen.model.LiveTvCategory;
+
+
+import com.sampletv.spagreen.model.Channel;
+import com.sampletv.spagreen.model.LiveTvCategory;
 
 import java.util.List;
 

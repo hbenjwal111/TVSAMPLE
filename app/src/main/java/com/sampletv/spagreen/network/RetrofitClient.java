@@ -1,6 +1,7 @@
-package com.oxootv.spagreen.network;
+package com.sampletv.spagreen.network;
 
-import com.oxootv.spagreen.Config;
+
+import com.sampletv.spagreen.Config;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

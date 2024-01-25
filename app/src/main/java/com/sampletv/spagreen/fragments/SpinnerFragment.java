@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.fragments;
+package com.sampletv.spagreen.fragments;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import android.widget.ProgressBar;
 
 import androidx.fragment.app.Fragment;
 
-import com.oxootv.spagreen.R;
+import com.sampletv.spagreen.R;
 
 public class SpinnerFragment extends Fragment {
 

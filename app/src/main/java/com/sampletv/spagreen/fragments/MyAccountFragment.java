@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.fragments;
+package com.sampletv.spagreen.fragments;
 
 
 import android.content.Intent;
@@ -14,12 +14,12 @@ import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.oxootv.spagreen.Constants;
-import com.oxootv.spagreen.utils.PreferenceUtils;
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.database.DatabaseHelper;
-import com.oxootv.spagreen.model.ActiveStatus;
-import com.oxootv.spagreen.ui.activity.LoginChooserActivity;
+import com.sampletv.spagreen.Constants;
+import com.sampletv.spagreen.utils.PreferenceUtils;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.database.DatabaseHelper;
+import com.sampletv.spagreen.model.ActiveStatus;
+import com.sampletv.spagreen.ui.activity.LoginChooserActivity;
 
 import static android.content.Context.MODE_PRIVATE;
 

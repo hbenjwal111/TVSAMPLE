@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.ui;
+package com.sampletv.spagreen.ui;
 
 import android.os.Parcel;
 import android.os.Parcelable;

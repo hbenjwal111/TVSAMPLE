@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.ui;
+package com.sampletv.spagreen.ui;
 
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
@@ -14,11 +14,11 @@ import androidx.leanback.widget.Presenter;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.model.CastAndCrew;
-import com.oxootv.spagreen.model.Director;
-import com.oxootv.spagreen.model.Genre;
-import com.oxootv.spagreen.model.MovieSingleDetails;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.model.CastAndCrew;
+import com.sampletv.spagreen.model.Director;
+import com.sampletv.spagreen.model.Genre;
+import com.sampletv.spagreen.model.MovieSingleDetails;
 
 import java.util.List;
 

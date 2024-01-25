@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.ui.presenter;
+package com.sampletv.spagreen.ui.presenter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,10 +15,10 @@ import androidx.core.app.ActivityOptionsCompat;
 import androidx.leanback.widget.ImageCardView;
 import androidx.leanback.widget.Presenter;
 
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.fragments.VideoDetailsFragment;
-import com.oxootv.spagreen.model.RelatedMovie;
-import com.oxootv.spagreen.ui.activity.VideoDetailsActivity;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.fragments.VideoDetailsFragment;
+import com.sampletv.spagreen.model.RelatedMovie;
+import com.sampletv.spagreen.ui.activity.VideoDetailsActivity;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 

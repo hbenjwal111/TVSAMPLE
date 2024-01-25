@@ -1,6 +1,7 @@
-package com.oxootv.spagreen;
+package com.sampletv.spagreen;
 
-import com.oxootv.spagreen.model.VideoContent;
+
+import com.sampletv.spagreen.model.VideoContent;
 
 import java.util.ArrayList;
 import java.util.List;

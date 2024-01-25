@@ -54,10 +54,6 @@
         <item name="playbackMediaItemDurationStyle">@style/FavoriteMediaItemDurationStyle</item>
     </style>
 
-    <style name="Theme.Example.LeanbackMusic.TrackListHeader">
-        <item name="playbackMediaListHeaderStyle">@style/MediaListHeaderStyle</item>
-    </style>
-
     <style name="RegularMediaItemNumberStyle" parent="Widget.Leanback.PlaybackMediaItemNumberStyle">
         <item name="android:visibility">visible</item>
     </style>
@@ -87,8 +83,5 @@
     <style name="FavoriteMediaItemDurationStyle" parent="Widget.Leanback.PlaybackMediaItemDurationStyle">
         <item name="android:visibility">visible</item>
         <item name="android:textAppearance">@style/FavoriteMediaItemTextStyle</item>
-    </style>
-    <style name="MediaListHeaderStyle" parent="Widget.Leanback.PlaybackMediaListHeaderStyle">
-        <item name="android:background">#282248</item>
     </style>
 </resources>

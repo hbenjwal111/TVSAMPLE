@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.ui.activity;
+package com.sampletv.spagreen.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,20 +12,18 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.oxootv.spagreen.Config;
-import com.oxootv.spagreen.Constants;
-import com.oxootv.spagreen.NetworkInst;
-import com.oxootv.spagreen.utils.PreferenceUtils;
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.database.DatabaseHelper;
-import com.oxootv.spagreen.model.ActivationModel;
-import com.oxootv.spagreen.model.ActiveStatus;
-import com.oxootv.spagreen.model.User;
-import com.oxootv.spagreen.network.RetrofitClient;
-import com.oxootv.spagreen.network.api.ActivationApi;
-import com.oxootv.spagreen.network.api.SubscriptionApi;
-
-import static com.oxootv.spagreen.fragments.TvSplashFragment.COMPLETED_SPLASH;
+import com.sampletv.spagreen.Config;
+import com.sampletv.spagreen.Constants;
+import com.sampletv.spagreen.NetworkInst;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.database.DatabaseHelper;
+import com.sampletv.spagreen.model.ActivationModel;
+import com.sampletv.spagreen.model.ActiveStatus;
+import com.sampletv.spagreen.model.User;
+import com.sampletv.spagreen.network.RetrofitClient;
+import com.sampletv.spagreen.network.api.ActivationApi;
+import com.sampletv.spagreen.network.api.SubscriptionApi;
+import com.sampletv.spagreen.utils.PreferenceUtils;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -175,7 +173,7 @@ public class ActivationActivity extends Activity {
 
     @Override
     public void onBackPressed() {
-        COMPLETED_SPLASH = false;
+        //COMPLETED_SPLASH = false;
         super.onBackPressed();
 
     }

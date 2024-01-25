@@ -13,7 +13,7 @@
  *
  */
 
-package com.oxootv.spagreen.music_service;
+package com.sampletv.spagreen.music_service;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -28,7 +28,8 @@ import androidx.leanback.widget.ArrayObjectAdapter;
 import androidx.leanback.widget.PlaybackControlsRow;
 import androidx.leanback.widget.PlaybackControlsRowPresenter;
 
-import com.oxootv.spagreen.R;
+import com.sampletv.spagreen.R;
+
 
 /**
  * This glue extends the {@link PlaybackControlGlue} with a {@link MediaMetaData} support.

@@ -12,7 +12,7 @@
  * the License.
  */
 
-package com.oxootv.spagreen.video_service;
+package com.sampletv.spagreen.video_service;
 
 import android.content.Context;
 import android.os.Handler;

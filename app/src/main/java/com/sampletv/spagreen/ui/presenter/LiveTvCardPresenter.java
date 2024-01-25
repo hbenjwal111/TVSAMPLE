@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.ui.presenter;
+package com.sampletv.spagreen.ui.presenter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 import androidx.leanback.widget.ImageCardView;
 import androidx.leanback.widget.Presenter;
 
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.model.Channel;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.model.Channel;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 

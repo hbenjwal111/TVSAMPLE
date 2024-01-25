@@ -1,15 +1,16 @@
-package com.oxootv.spagreen.utils;
+package com.sampletv.spagreen.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import com.oxootv.spagreen.Config;
-import com.oxootv.spagreen.Constants;
-import com.oxootv.spagreen.database.DatabaseHelper;
-import com.oxootv.spagreen.model.ActiveStatus;
-import com.oxootv.spagreen.network.RetrofitClient;
-import com.oxootv.spagreen.network.api.SubscriptionApi;
+
+import com.sampletv.spagreen.Config;
+import com.sampletv.spagreen.Constants;
+import com.sampletv.spagreen.database.DatabaseHelper;
+import com.sampletv.spagreen.model.ActiveStatus;
+import com.sampletv.spagreen.network.RetrofitClient;
+import com.sampletv.spagreen.network.api.SubscriptionApi;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -1,6 +1,7 @@
-package com.oxootv.spagreen.network.api;
+package com.sampletv.spagreen.network.api;
 
-import com.oxootv.spagreen.model.CountryModel;
+
+import com.sampletv.spagreen.model.CountryModel;
 
 import java.util.List;
 

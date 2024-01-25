@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.ui.presenter;
+package com.sampletv.spagreen.ui.presenter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -11,15 +11,15 @@ import android.view.ViewGroup;
 import androidx.leanback.widget.ImageCardView;
 import androidx.leanback.widget.Presenter;
 
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.fragments.CountryFragment;
-import com.oxootv.spagreen.fragments.FavouriteFragment;
-import com.oxootv.spagreen.fragments.GenreFragment;
-import com.oxootv.spagreen.fragments.MoviesFragment;
-import com.oxootv.spagreen.fragments.TvSeriesFragment;
-import com.oxootv.spagreen.model.CountryModel;
-import com.oxootv.spagreen.model.Genre;
-import com.oxootv.spagreen.model.Movie;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.fragments.CountryFragment;
+import com.sampletv.spagreen.fragments.FavouriteFragment;
+import com.sampletv.spagreen.fragments.GenreFragment;
+import com.sampletv.spagreen.fragments.MoviesFragment;
+import com.sampletv.spagreen.fragments.TvSeriesFragment;
+import com.sampletv.spagreen.model.CountryModel;
+import com.sampletv.spagreen.model.Genre;
+import com.sampletv.spagreen.model.Movie;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 

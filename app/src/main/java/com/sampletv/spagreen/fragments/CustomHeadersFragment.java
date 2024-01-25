@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.fragments;
+package com.sampletv.spagreen.fragments;
 
 import android.os.Bundle;
 import android.view.View;
@@ -18,11 +18,11 @@ import androidx.leanback.widget.RowHeaderPresenter;
 import androidx.leanback.widget.RowPresenter;
 import androidx.leanback.widget.VerticalGridView;
 
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.ui.IconHeaderItem;
-import com.oxootv.spagreen.ui.activity.LeanbackActivity;
-import com.oxootv.spagreen.ui.Utils;
-import com.oxootv.spagreen.ui.presenter.IconHeaderItemPresenter;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.ui.IconHeaderItem;
+import com.sampletv.spagreen.ui.activity.LeanbackActivity;
+import com.sampletv.spagreen.ui.Utils;
+import com.sampletv.spagreen.ui.presenter.IconHeaderItemPresenter;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

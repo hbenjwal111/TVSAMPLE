@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.model;
+package com.sampletv.spagreen.model;
 
 
 import com.google.gson.annotations.Expose;

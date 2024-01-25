@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.adapter;
+package com.sampletv.spagreen.adapter;
 
 
 import android.content.Context;
@@ -10,9 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.model.CastAndCrew;
-import com.oxootv.spagreen.utils.ItemAnimation;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.model.CastAndCrew;
+import com.sampletv.spagreen.utils.ItemAnimation;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

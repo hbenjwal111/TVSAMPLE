@@ -1,10 +1,11 @@
-package com.oxootv.spagreen.ui.activity;
-
-import androidx.fragment.app.FragmentActivity;
+package com.sampletv.spagreen.ui.activity;
 
 import android.os.Bundle;
 
-import com.oxootv.spagreen.R;
+import androidx.fragment.app.FragmentActivity;
+
+import com.sampletv.spagreen.R;
+
 
 public class VideoDetailsActivity extends FragmentActivity {
     public static final String TRANSITION_NAME = "t_for_transition";

@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.ui.presenter;
+package com.sampletv.spagreen.ui.presenter;
 
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -8,8 +8,9 @@ import android.widget.TextView;
 
 import androidx.leanback.widget.Presenter;
 
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.model.CountryModel;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.model.CountryModel;
+
 
 public class CountryPresenter extends Presenter {
 

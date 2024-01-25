@@ -1,5 +1,6 @@
-package com.oxootv.spagreen.adapter;
+package com.sampletv.spagreen.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,15 +9,15 @@ import android.widget.Button;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.model.Video;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.model.Videos;
 
 import java.util.List;
 
 public class ServerAdapter extends RecyclerView.Adapter<ServerAdapter.OriginalViewHolder> {
 
     private String type;
-    private List<Video> videos;
+    private List<Videos> videosses;
     private Context ctx;
 
     private OnItemClickListener mOnItemClickListener;
@@ -25,15 +26,15 @@ public class ServerAdapter extends RecyclerView.Adapter<ServerAdapter.OriginalVi
 
 
     public interface OnItemClickListener {
-        void onItemClick(View view, Video obj, int position, OriginalViewHolder holder);
+        void onItemClick(View view, Videos obj, int position, OriginalViewHolder holder);
     }
 
     public void setOnItemClickListener(OnItemClickListener mItemClickListener) {
         this.mOnItemClickListener = mItemClickListener;
     }
 
-    public ServerAdapter(Context context, List<Video> videos, String type) {
-        this.videos = videos;
+    public ServerAdapter(Context context, List<Videos> videosses, String type) {
+        this.videosses = videosses;
         ctx = context;
         this.type = type;
     }
@@ -48,16 +49,16 @@ public class ServerAdapter extends RecyclerView.Adapter<ServerAdapter.OriginalVi
     }
 
     @Override
-    public void onBindViewHolder(final OriginalViewHolder holder, final int position) {
+    public void onBindViewHolder(final OriginalViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
-        Video obj = videos.get(position);
+        Videos obj = videosses.get(position);
         holder.serverNameTv.setText(obj.getLabel());
 
         holder.serverNameTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mOnItemClickListener != null) {
-                    mOnItemClickListener.onItemClick(v, videos.get(position), position, holder);
+                    mOnItemClickListener.onItemClick(v, videosses.get(position), position, holder);
                 }
             }
         });
@@ -66,7 +67,7 @@ public class ServerAdapter extends RecyclerView.Adapter<ServerAdapter.OriginalVi
 
     @Override
     public int getItemCount() {
-        return videos.size();
+        return videosses.size();
     }
 
     public static class OriginalViewHolder extends RecyclerView.ViewHolder {

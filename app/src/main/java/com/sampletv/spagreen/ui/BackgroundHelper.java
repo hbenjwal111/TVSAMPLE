@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.ui;
+package com.sampletv.spagreen.ui;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -9,7 +9,7 @@ import android.util.DisplayMetrics;
 import androidx.core.content.ContextCompat;
 import androidx.leanback.app.BackgroundManager;
 
-import com.oxootv.spagreen.R;
+import com.sampletv.spagreen.R;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 

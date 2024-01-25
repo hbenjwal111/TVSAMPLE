@@ -12,7 +12,7 @@
  * the License.
  *
  */
-package com.oxootv.spagreen.music_service;
+package com.sampletv.spagreen.music_service;
 
 import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
@@ -42,8 +42,7 @@ import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
 
-import com.oxootv.spagreen.R;
-
+import com.sampletv.spagreen.R;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -158,11 +157,11 @@ public class MusicPlaybackService extends Service {
     }
 
     private void stopServiceIfNeeded() {
-        if (mServiceCallbacks.size() == 0
-                && mCurrentMediaState == com.oxootv.spagreen.music_service.MediaUtils.MEDIA_STATE_MEDIALIST_COMPLETED) {
+        /*if (mServiceCallbacks.size() == 0
+                && mCurrentMediaState == music_service.MediaUtils.MEDIA_STATE_MEDIALIST_COMPLETED) {
             Log.d(TAG, "stop " + MusicPlaybackService.this);
             stopSelf();
-        }
+        }*/
     }
 
     private void notifyMediaStateChanged(int currentMediaState) {
@@ -500,6 +499,7 @@ public class MusicPlaybackService extends Service {
     /**
      * Configures service as a foreground service.
      */
+    @SuppressLint("ForegroundServiceType")
     void setUpAsForeground(String text) {
         Intent notificationIntent = new Intent(this, MusicPlayerActivity.class);
         PendingIntent pi = PendingIntent.getActivity(getApplicationContext(), 0,

@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.ui.activity;
+package com.sampletv.spagreen.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,16 +8,17 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
-import com.oxootv.spagreen.Config;
-import com.oxootv.spagreen.Constants;
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.database.DatabaseHelper;
-import com.oxootv.spagreen.model.ActiveStatus;
-import com.oxootv.spagreen.model.User;
-import com.oxootv.spagreen.network.RetrofitClient;
-import com.oxootv.spagreen.network.api.SignUpApi;
-import com.oxootv.spagreen.network.api.SubscriptionApi;
-import com.oxootv.spagreen.utils.ToastMsg;
+
+import com.sampletv.spagreen.Config;
+import com.sampletv.spagreen.Constants;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.database.DatabaseHelper;
+import com.sampletv.spagreen.model.ActiveStatus;
+import com.sampletv.spagreen.model.User;
+import com.sampletv.spagreen.network.RetrofitClient;
+import com.sampletv.spagreen.network.api.SignUpApi;
+import com.sampletv.spagreen.network.api.SubscriptionApi;
+import com.sampletv.spagreen.utils.ToastMsg;
 
 import retrofit2.Call;
 import retrofit2.Callback;

@@ -1,7 +1,8 @@
-package com.oxootv.spagreen.network.api;
+package com.sampletv.spagreen.network.api;
 
-import com.oxootv.spagreen.model.ActiveStatus;
-import com.oxootv.spagreen.model.SubscriptionHistory;
+
+import com.sampletv.spagreen.model.ActiveStatus;
+import com.sampletv.spagreen.model.SubscriptionHistory;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;

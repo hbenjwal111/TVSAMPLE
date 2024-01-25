@@ -1,4 +1,4 @@
-package com.oxootv.spagreen;
+package com.sampletv.spagreen;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -11,7 +11,7 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.oxootv.spagreen.video_service;
+package com.sampletv.spagreen.video_service;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -20,7 +20,8 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 
-import com.oxootv.spagreen.R;
+
+import com.sampletv.spagreen.R;
 
 import java.util.Collections;
 import java.util.List;

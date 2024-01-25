@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.oxootv.spagreen.video_service;
+package com.sampletv.spagreen.video_service;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -70,7 +70,7 @@ public final class SharedPreferencesHelper {
     }
 
     /**
-     * Reads the {@link List <Video>} from {@link SharedPreferences} for a given channel.
+     * Reads the {@link List <Videos>} from {@link SharedPreferences} for a given channel.
      *
      * @param context used for getting an instance of shared preferences.
      * @param channelId of the channel that the movies are associated with.

@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.fragments;
+package com.sampletv.spagreen.fragments;
 
 import android.Manifest;
 import android.content.Intent;
@@ -16,10 +16,10 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.ui.activity.LeanbackActivity;
-import com.oxootv.spagreen.ui.activity.LoginChooserActivity;
-import com.oxootv.spagreen.utils.PreferenceUtils;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.ui.activity.LeanbackActivity;
+import com.sampletv.spagreen.ui.activity.LoginChooserActivity;
+import com.sampletv.spagreen.utils.PreferenceUtils;
 
 public class TvSplashFragment extends Fragment {
     private static final int REQUEST_CODE = 123;

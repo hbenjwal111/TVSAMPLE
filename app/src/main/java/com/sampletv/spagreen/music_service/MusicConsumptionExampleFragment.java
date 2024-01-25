@@ -12,7 +12,7 @@
  * the License.
  */
 
-package com.oxootv.spagreen.music_service;
+package com.sampletv.spagreen.music_service;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -35,7 +35,7 @@ import androidx.leanback.widget.PresenterSelector;
 import androidx.leanback.widget.RowPresenter;
 
 import com.google.gson.Gson;
-import com.oxootv.spagreen.R;
+import com.sampletv.spagreen.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -167,11 +167,11 @@ public class MusicConsumptionExampleFragment extends PlaybackFragment implements
             } else {
                 Context context = vh.getMediaItemNumberView().getContext();
                 vh.getMediaItemNumberView().setTextAppearance(context,
-                        R.style.TextAppearance_Leanback_PlaybackMediaItemNumber);
+                        R.style.Theme_Example_LeanbackMusic_FavoriteSongNumbers);
                 vh.getMediaItemNameView().setTextAppearance(context,
-                        R.style.TextAppearance_Leanback_PlaybackMediaItemName);
+                        R.style.Theme_Example_LeanbackMusic_RegularSongNumbers);
                 vh.getMediaItemDurationView().setTextAppearance(context,
-                        R.style.TextAppearance_Leanback_PlaybackMediaItemDuration);
+                        R.style.Theme_Example_LeanbackMusic_FavoriteSongNumbers);
             }
         }
     }

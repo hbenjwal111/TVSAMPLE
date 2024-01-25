@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.database;
+package com.sampletv.spagreen.database;
 
 public class DownloadInfo {
 

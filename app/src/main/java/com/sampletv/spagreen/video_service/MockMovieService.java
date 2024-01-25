@@ -11,13 +11,14 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.oxootv.spagreen.video_service;
+package com.sampletv.spagreen.video_service;
 
 import android.content.Context;
 
-import com.oxootv.spagreen.Constants;
-import com.oxootv.spagreen.R;
-import com.oxootv.spagreen.model.VideoContent;
+
+import com.sampletv.spagreen.Constants;
+import com.sampletv.spagreen.R;
+import com.sampletv.spagreen.model.VideoContent;
 
 import java.util.ArrayList;
 import java.util.Arrays;

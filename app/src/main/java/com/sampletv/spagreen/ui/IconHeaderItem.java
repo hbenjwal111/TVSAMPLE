@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.ui;
+package com.sampletv.spagreen.ui;
 
 
 import androidx.leanback.widget.HeaderItem;

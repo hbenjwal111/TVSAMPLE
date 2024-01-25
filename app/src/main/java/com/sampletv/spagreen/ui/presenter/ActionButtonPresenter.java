@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.ui.presenter;
+package com.sampletv.spagreen.ui.presenter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +8,7 @@ import android.widget.Button;
 import androidx.leanback.widget.Action;
 import androidx.leanback.widget.Presenter;
 
-import com.oxootv.spagreen.R;
+import com.sampletv.spagreen.R;
 
 
 public class ActionButtonPresenter extends Presenter {

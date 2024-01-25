@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.model;
+package com.sampletv.spagreen.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -46,7 +46,7 @@ public class MovieSingleDetails implements Serializable {
     private String posterUrl;
     @SerializedName("videos")
     @Expose
-    private List<Video> videos = null;
+    private List<Videos> videosses = null;
     @SerializedName("download_links")
     @Expose
     private List<DownloadLink> downloadLinks = null;
@@ -184,12 +184,12 @@ public class MovieSingleDetails implements Serializable {
         this.posterUrl = posterUrl;
     }
 
-    public List<Video> getVideos() {
-        return videos;
+    public List<Videos> getVideos() {
+        return videosses;
     }
 
-    public void setVideos(List<Video> videos) {
-        this.videos = videos;
+    public void setVideos(List<Videos> videosses) {
+        this.videosses = videosses;
     }
 
     public List<Genre> getGenre() {

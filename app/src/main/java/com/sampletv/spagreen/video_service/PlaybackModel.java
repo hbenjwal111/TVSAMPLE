@@ -1,8 +1,8 @@
-package com.oxootv.spagreen.video_service;
+package com.sampletv.spagreen.video_service;
 
 import androidx.annotation.NonNull;
 
-import com.oxootv.spagreen.model.Video;
+import com.sampletv.spagreen.model.Videos;
 
 import java.io.Serializable;
 import java.util.List;
@@ -17,9 +17,9 @@ public class PlaybackModel implements Serializable {
     private String videoUrl;
     private String videoType;
     private String category;
-    private List<Video> videoList;
+    private List<Videos> videoList;
     private String isPaid;
-    private Video video;
+    private Videos video;
     private long programId;
     private long watchNextId;
 
@@ -98,19 +98,19 @@ public class PlaybackModel implements Serializable {
         this.category = category;
     }
 
-    public List<Video> getVideoList() {
+    public List<Videos> getVideoList() {
         return videoList;
     }
 
-    public void setVideoList(List<Video> videoList) {
+    public void setVideoList(List<Videos> videoList) {
         this.videoList = videoList;
     }
 
-    public Video getVideo() {
+    public Videos getVideo() {
         return video;
     }
 
-    public void setVideo(Video video) {
+    public void setVideo(Videos video) {
         this.video = video;
     }
 

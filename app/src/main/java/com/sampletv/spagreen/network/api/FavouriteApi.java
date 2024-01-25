@@ -1,7 +1,8 @@
-package com.oxootv.spagreen.network.api;
+package com.sampletv.spagreen.network.api;
 
 
-import com.oxootv.spagreen.model.Movie;
+
+import com.sampletv.spagreen.model.Movie;
 
 import java.util.List;
 

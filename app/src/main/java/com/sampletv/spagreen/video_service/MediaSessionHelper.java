@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.video_service;
+package com.sampletv.spagreen.video_service;
 
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -23,8 +23,8 @@ import com.bumptech.glide.request.target.CustomTarget;
 
 import com.bumptech.glide.request.transition.Transition;
 import com.google.android.exoplayer2.ExoPlayer;
-import com.google.android.exoplayer2.SimpleExoPlayer;
-import com.oxootv.spagreen.ui.activity.PlayerActivity;
+import com.sampletv.spagreen.ui.activity.PlayerActivity;
+
 
 public class MediaSessionHelper {
     MediaSession mSession;

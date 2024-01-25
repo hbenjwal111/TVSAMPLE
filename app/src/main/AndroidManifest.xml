@@ -8,15 +8,20 @@
         android:name="android.software.leanback"
         android:required="true" />
 
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
@@ -31,72 +36,73 @@
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
 
         <activity
-            android:name=".video_service.VideoPlaybackActivity"
-            android:supportsPictureInPicture="true"
-            android:exported="true"
-            android:screenOrientation="landscape"
+            android:name="com.sampletv.spagreen.video_service.VideoPlaybackActivity"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
-            android:resizeableActivity="true"/>
-        <activity android:name=".music_service.MusicPlayerActivity" />
+            android:exported="true"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:supportsPictureInPicture="true" />
+        <activity android:name="com.sampletv.spagreen.music_service.MusicPlayerActivity" />
         <activity
-            android:name=".ui.activity.ErrorActivity"
+            android:name="com.sampletv.spagreen.ui.activity.ErrorActivity"
             android:exported="true"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ui.activity.VideoDetailsActivity"
+            android:name="com.sampletv.spagreen.ui.activity.VideoDetailsActivity"
             android:exported="true"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ui.activity.SignUpActivity"
+            android:name="com.sampletv.spagreen.ui.activity.SignUpActivity"
             android:exported="true"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
-            android:screenOrientation="landscape"
-            android:name=".ui.activity.PlayerActivity"
-            android:supportsPictureInPicture="true"
-            android:exported="true"
+            android:name="com.sampletv.spagreen.ui.activity.PlayerActivity"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
-            android:resizeableActivity="true"/>
+            android:exported="true"
+            android:resizeableActivity="true"
+            android:screenOrientation="landscape"
+            android:supportsPictureInPicture="true" />
         <activity
-            android:name=".ui.activity.LoginActivity"
+            android:name="com.sampletv.spagreen.ui.activity.LoginActivity"
             android:exported="true"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ui.activity.ItemGenreActivity"
+            android:name="com.sampletv.spagreen.ui.activity.ItemGenreActivity"
             android:exported="true"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ui.activity.ItemCountryActivity"
+            android:name="com.sampletv.spagreen.ui.activity.ItemCountryActivity"
             android:exported="true"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ui.activity.ActivationActivity"
+            android:name="com.sampletv.spagreen.ui.activity.ActivationActivity"
             android:exported="true"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ui.activity.SearchActivity"
+            android:name="com.sampletv.spagreen.ui.activity.SearchActivity"
             android:exported="true"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.Leanback.Details.NoSharedElementTransition" />
         <activity
-            android:name=".ui.activity.LeanbackActivity"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="landscape"/>
-        <activity
-            android:name=".ui.activity.SplashScreenActivity"
+            android:name="com.sampletv.spagreen.ui.activity.LeanbackActivity"
             android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.sampletv.spagreen.ui.activity.SplashScreenActivity"
             android:banner="@drawable/ic_launcher_tv"
+            android:exported="true"
             android:icon="@drawable/ic_launcher_tv"
             android:label="@string/app_name"
             android:logo="@drawable/ic_launcher_tv"
-            android:roundIcon="@drawable/ic_launcher_tv">
+            android:roundIcon="@drawable/ic_launcher_tv"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -107,13 +113,14 @@
 
         </activity>
         <activity
-            android:name=".ui.activity.LoginChooserActivity"
+            android:name="com.sampletv.spagreen.ui.activity.LoginChooserActivity"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
-            android:name=".MainActivity"
-            android:screenOrientation="landscape"
-            android:label="@string/app_name">
+            android:name="com.sampletv.spagreen.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -123,10 +130,12 @@
 
 
         <service
-            android:name=".music_service.MusicPlaybackService"
+            android:name="com.sampletv.spagreen.music_service.MusicPlaybackService"
             android:exported="false" />
 
-        <activity android:name=".video_service.AppLinkActivity">
+        <activity
+            android:name="com.sampletv.spagreen.video_service.AppLinkActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -136,16 +145,19 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".video_service.SyncChannelJobService"
+        <service
+            android:name="com.sampletv.spagreen.video_service.SyncChannelJobService"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <service
-            android:name=".video_service.SyncProgramsJobService"
+            android:name="com.sampletv.spagreen.video_service.SyncProgramsJobService"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
-        <receiver android:name=".video_service.InitializeChannelsReceiver">
+        <receiver
+            android:name="com.sampletv.spagreen.video_service.InitializeChannelsReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.media.tv.action.INITIALIZE_PROGRAMS" />
                 <category android:name="android.intent.category.DEFAULT" />

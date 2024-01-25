@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.video_service;
+package com.sampletv.spagreen.video_service;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.oxootv.spagreen.ui.activity.PlayerActivity;
+import com.sampletv.spagreen.ui.activity.PlayerActivity;
+
 
 /**
  * Delegates to the correct activity based on how the user entered the app.

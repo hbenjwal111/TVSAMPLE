@@ -1,4 +1,4 @@
-package com.oxootv.spagreen.utils;
+package com.sampletv.spagreen.utils;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.oxootv.spagreen.R;
+import com.sampletv.spagreen.R;
 
 
 public class PaidDialog extends Dialog implements
@@ -43,13 +43,8 @@ public class PaidDialog extends Dialog implements
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.continueBtn:
-                dismiss();
-                break;
-
-            default:
-                break;
+        if (view.getId() == R.id.continueBtn) {
+            dismiss();
         }
         dismiss();
     }
